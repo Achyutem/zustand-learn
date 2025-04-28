@@ -1,0 +1,43 @@
+:root {
+	--bg-color: #fff;
+	--text-color: #000;
+}
+
+.dark-mode {
+	--bg-color: #000;
+	--text-color: #fff;
+}
+
+.centre {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.main {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+}
+
+.header {
+	justify-content: space-between;
+	gap: 20px;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.content {
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+button {
+	border-radius: 2px;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border: none;
+}
