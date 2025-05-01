@@ -14,6 +14,10 @@ interface UserStore {
 	selectedUser: User | undefined;
 	isLoading: boolean;
 	setLoading: (value: boolean) => void;
+	isDarkMode: boolean;
+	setDarkMode: (bool: boolean) => void;
+	showAdminsOnly: boolean;
+	setShowAdminsOnly: (bool: boolean) => void;
 }
 
 export const useUserStore = create<UserStore>((set) => ({
@@ -37,4 +41,8 @@ export const useUserStore = create<UserStore>((set) => ({
 	isLoading: false,
 	setLoading: (value) => set({ isLoading: value }),
 	selectedUser: undefined,
+	isDarkMode: false,
+	setDarkMode: (bool) => set({ isDarkMode: bool }),
+	showAdminsOnly: false,
+	setShowAdminsOnly: (bool) => set({ showAdminsOnly: bool }),
 }));
