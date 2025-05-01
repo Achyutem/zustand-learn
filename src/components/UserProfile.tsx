@@ -7,7 +7,7 @@ export const UserProfile: React.FC = React.memo(() => {
 	const { users, selectedUserId, isLoading, showAdminsOnly } = useUserStore();
 	const selectedUser = users.find((u) => u.id === selectedUserId);
 
-	if (!selectedUser || selectedUser?.isAdmin !== showAdminsOnly) {
+	if (!selectedUser || (!selectedUser?.isAdmin && showAdminsOnly)) {
 		return (
 			<div>
 				select a new user because your previously selected user was not a admin
