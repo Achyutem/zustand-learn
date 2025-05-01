@@ -4,11 +4,15 @@ import { useUserStore } from "../useUserStore";
 const UserDetails = lazy(() => import("./UserDetail"));
 
 export const UserProfile: React.FC = React.memo(() => {
-	const { users, selectedUserId, isLoading } = useUserStore();
+	const { users, selectedUserId, isLoading, showAdminsOnly } = useUserStore();
 	const selectedUser = users.find((u) => u.id === selectedUserId);
 
-	if (!selectedUser) {
-		return <div>No user selected</div>;
+	if (!selectedUser || selectedUser?.isAdmin !== showAdminsOnly) {
+		return (
+			<div>
+				select a new user because your previously selected user was not a admin
+			</div>
+		);
 	}
 
 	if (isLoading) {

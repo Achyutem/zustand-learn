@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useUserStore } from "../useUserStore";
 
 export const UserList: React.FC = React.memo(() => {
-	const { users, selectedUserId, selectUser } = useUserStore();
-	const [showAdminsOnly, setShowAdminsOnly] = useState(false);
+	const { users, selectedUserId, selectUser, showAdminsOnly } = useUserStore();
 
 	const showFilteredUsers = showAdminsOnly
 		? users.filter((user) => user.isAdmin)
@@ -11,9 +10,6 @@ export const UserList: React.FC = React.memo(() => {
 
 	return (
 		<div>
-			<button onClick={() => setShowAdminsOnly((prev) => !prev)}>
-				{showAdminsOnly ? "show all users" : "show admin only"}
-			</button>
 			<h2>Users</h2>
 			<ul>
 				{showFilteredUsers.map((user) => (
