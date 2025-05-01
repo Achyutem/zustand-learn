@@ -5,9 +5,16 @@ import { useUserStore } from "../useUserStore";
 describe("UserDetails", () => {
 	it("renders user details correctly", () => {
 		useUserStore.setState({
-			users: [{ id: 1, name: "Alice", email: "alice@email.com" }],
+			users: [
+				{ id: 1, name: "Alice", email: "alice@email.com", isAdmin: true },
+			],
 			selectedUserId: 1,
-			selectedUser: { id: 1, name: "Alice", email: "alice@email.com" },
+			selectedUser: {
+				id: 1,
+				name: "Alice",
+				email: "alice@email.com",
+				isAdmin: true,
+			},
 			isLoading: false,
 			selectUser: () => {},
 			setLoading: () => {},
