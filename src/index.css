@@ -1,11 +1,13 @@
 :root {
 	--bg-color: #fff;
 	--text-color: #000;
+	--border-color: rgb(75, 73, 73);
 }
 
 .dark-mode {
 	--bg-color: #000;
 	--text-color: #fff;
+	--border-color: rgb(75, 73, 73);
 }
 
 .centre {
@@ -35,9 +37,22 @@ body {
 	border: 1px solid #ccc;
 }
 
-button {
-	border-radius: 2px;
+.theme-button {
 	color: var(--text-color);
 	background-color: var(--bg-color);
 	border: none;
+}
+
+.admin-button {
+	padding: 5px;
+	border-radius: 15px;
+	border: 2px solid var(--border-color);
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}
+
+.button-group {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 }
